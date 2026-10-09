@@ -4,113 +4,631 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shahzada Rock | THE CYBER POINT CAFE</title>
-<meta name="description" content="बिहार की भूमि रिकॉर्ड एवं सरकारी ऑनलाइन सेवाएँ">
+
+<title>THE CYBER POINT CAFE | Shahzada Rock</title>
+<meta name="description" content="THE CYBER POINT CAFE - बिहार भूमि रिकॉर्ड, सरकारी ऑनलाइन सेवाएँ, PDF और Image Tools।">
+<meta name="theme-color" content="#080b28">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f4f7fb;color:#17324d}
-header{background:linear-gradient(120deg,#062c52,#0879b9);color:white;padding:25px 5%;text-align:center}
-.brand{font-size:clamp(26px,4vw,48px);font-weight:900;letter-spacing:1px}
-.brand span{color:#ffcf52}
-.hero{max-width:1100px;margin:30px auto;padding:25px;display:flex;align-items:center;justify-content:center;gap:35px;flex-wrap:wrap;background:white;border-radius:22px;box-shadow:0 10px 35px #15395c18}
-.heroText{flex:1;min-width:250px}
-.heroText small{color:#0879b9;font-size:17px;font-weight:bold}
-.heroText h1{font-size:clamp(38px,6vw,68px);line-height:1.1;margin:12px 0;color:#063d70}
-.heroText p{font-size:18px;color:#53677b;line-height:1.7}
-.hero img{width:230px;height:230px;object-fit:cover;border-radius:20px;border:5px solid #e1effb;box-shadow:0 8px 25px #1234}
-.phone{display:inline-block;background:#0879b9;color:white;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:bold}
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:#fff;border-bottom:1px solid #ddd}
-nav a{padding:15px;color:#073e70;text-decoration:none;font-weight:bold}
-nav a:hover{background:#e8f4ff}
-.container{max-width:1200px;margin:30px auto;padding:0 18px}
-.heading{text-align:center;font-size:30px;color:#073e70;margin:35px 0 8px}
-.subheading{text-align:center;color:#66788a;margin-bottom:25px}
-.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.service{display:flex;align-items:center;gap:12px;background:white;padding:17px 14px;border-radius:13px;text-decoration:none;color:#123c60;font-weight:bold;border:1px solid #e1eaf2;box-shadow:0 4px 14px #1232;transition:.2s}
-.service:hover{transform:translateY(-3px);border-color:#0879b9}
-.icon{font-size:25px}
-.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.tool{background:#e6f3ff;padding:20px 10px;border-radius:12px;text-align:center;color:#064574;text-decoration:none;font-weight:bold}
-.tool:hover{background:#cce8ff}
-footer{background:#062c52;color:white;text-align:center;padding:25px;margin-top:40px;line-height:1.8}
-@media(max-width:850px){.services,.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:500px){.services,.tools{grid-template-columns:1fr}.hero{margin:18px 12px}.hero img{width:190px;height:190px}.heading{font-size:25px}}
+:root {
+  --gold: #ffd76a;
+  --dark: #080b28;
+  --purple: #421b78;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-family: Arial, "Noto Sans Devanagari", sans-serif;
+  background:
+    radial-gradient(ellipse at top left, #173f78 0%, transparent 42%),
+    radial-gradient(ellipse at bottom right, #48145f 0%, transparent 42%),
+    linear-gradient(135deg, #07091e, #10163c 55%, #170c32);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* TCP background wallpaper */
+body::before {
+  content: "TCP";
+  position: fixed;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  font-size: clamp(180px, 35vw, 480px);
+  font-weight: 1000;
+  letter-spacing: 12px;
+  white-space: nowrap;
+  color: rgba(255, 215, 106, 0.055);
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ffffff17 1px, transparent 1.5px);
+  background-size: 35px 35px;
+  opacity: .35;
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px 24px;
+  background: linear-gradient(135deg, #10183eaa, #321153aa);
+  border-bottom: 2px solid #ffd76a66;
+  box-shadow: 0 8px 35px #0005;
+}
+
+.brand {
+  margin: 0;
+  font-size: clamp(28px, 5vw, 58px);
+  line-height: 1.15;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fff4b0, #ffc342, #fff, #ffb72f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 13px #ffcc5555);
+  animation: brandGlow 3s ease-in-out infinite alternate;
+}
+
+.brand span {
+  color: #ff4d79;
+  -webkit-text-fill-color: #ff4d79;
+}
+
+.tagline {
+  max-width: 900px;
+  margin: 15px auto 0;
+  color: #e9eaff;
+  font-size: clamp(14px, 2vw, 20px);
+  line-height: 1.7;
+}
+
+.owner {
+  margin-top: 13px;
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+@keyframes brandGlow {
+  from { filter: drop-shadow(0 0 5px #ffd76a44); }
+  to { filter: drop-shadow(0 0 20px #ffd76aaa); }
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 10px;
+  background: #07091edb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #ffffff20;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #ffffff28;
+  background: linear-gradient(120deg, #283b77, #55277c);
+  transition: .3s;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  color: #fff0a7;
+  box-shadow: 0 0 18px #a46cff77;
+}
+
+/* Social media buttons */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 24px 14px 8px;
+}
+
+.social-btn {
+  min-width: 190px;
+  text-align: center;
+  padding: 15px 22px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 15px;
+  border: 1px solid #ffffff75;
+  box-shadow: 0 6px 22px #0005;
+  animation: socialPulse 2.5s ease-in-out infinite;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.youtube {
+  background: linear-gradient(120deg, #ff1616, #a80000);
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.035);
+  box-shadow: 0 0 25px #ffffff55;
+}
+
+@keyframes socialPulse {
+  0%, 100% { box-shadow: 0 5px 18px #0005; }
+  50% { box-shadow: 0 5px 23px #ffffff25; }
+}
+
+/* Main layout */
+.wrap {
+  max-width: 1450px;
+  padding: 22px 16px;
+  margin: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.panel {
+  min-height: 220px;
+  padding: 23px 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #ffffff2b;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #ffffff14, #ffffff06);
+  box-shadow: 0 12px 35px #0003;
+  backdrop-filter: blur(8px);
+  transition: transform .3s, border-color .3s;
+}
+
+.panel:hover {
+  transform: translateY(-5px);
+  border-color: #ffd76a99;
+}
+
+.panel h2 {
+  margin: 10px 0;
+  color: var(--gold);
+  font-size: 27px;
+}
+
+.panel p {
+  margin: 7px 0;
+  line-height: 1.7;
+  color: #edf0ff;
+  font-weight: 600;
+}
+
+.mapshape {
+  font-size: 53px;
+}
+
+.profile-photo {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--gold);
+  padding: 4px;
+  background: linear-gradient(135deg, #ffec9e, #ff9d28, #a65cff);
+  box-shadow: 0 0 0 4px #ffffff16, 0 0 28px #ffd76a66;
+  animation: photoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes photoGlow {
+  from { box-shadow: 0 0 12px #ffd76a55; }
+  to { box-shadow: 0 0 30px #ffd76acc; }
+}
+
+.phone {
+  display: inline-block;
+  margin-top: 7px;
+  padding: 10px 17px;
+  color: #101020;
+  background: linear-gradient(90deg, #fff0a6, #ffc84c);
+  border-radius: 30px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.section-title {
+  margin: 32px 0 15px;
+  text-align: center;
+  font-size: clamp(23px, 3vw, 33px);
+  color: #ffe08b;
+  font-weight: 950;
+  text-shadow: 0 0 15px #ffc94a44;
+}
+
+/* Animated service buttons */
+.services,
+.tools {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.btn,
+.tool {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 15px;
+  border: 1px solid #ffffff55;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 850;
+  background: linear-gradient(120deg, #075baf, #5524a7, #bd246c);
+  background-size: 220% 220%;
+  box-shadow: 0 5px 17px #0004;
+  animation: buttonColors 7s ease infinite;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.btn:nth-child(4n+2),
+.tool:nth-child(4n+2) {
+  background-image: linear-gradient(120deg, #0a777f, #1460d5, #45218b);
+}
+
+.btn:nth-child(4n+3),
+.tool:nth-child(4n+3) {
+  background-image: linear-gradient(120deg, #bb174e, #7528b8, #ed7a22);
+}
+
+.btn:nth-child(4n+4),
+.tool:nth-child(4n+4) {
+  background-image: linear-gradient(120deg, #197b48, #087eae, #6330b6);
+}
+
+.btn::before,
+.tool::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -80%;
+  left: -60%;
+  width: 35%;
+  height: 260%;
+  transform: rotate(25deg);
+  background: #ffffff25;
+  transition: left .5s ease;
+}
+
+.btn:hover::before,
+.tool:hover::before {
+  left: 130%;
+}
+
+.btn:hover,
+.tool:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 24px #8d7aff77;
+}
+
+@keyframes buttonColors {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.ico {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff25;
+  font-size: 21px;
+}
+
+.txt {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.go {
+  width: 27px;
+  height: 27px;
+  min-width: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #17102b;
+  background: linear-gradient(135deg, #fff1a4, #ffc34b);
+  font-size: 21px;
+}
+
+.tool {
+  justify-content: center;
+  text-align: center;
+}
+
+.note {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #ffd76a66;
+  border-radius: 14px;
+  background: #ffffff0b;
+  color: #e9eaff;
+  line-height: 1.8;
+}
+
+footer {
+  margin-top: 28px;
+  padding: 25px 15px;
+  text-align: center;
+  line-height: 2;
+  font-weight: 800;
+  color: #fff;
+  background: #060719dd;
+  border-top: 2px solid #ffd76a77;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+footer a {
+  color: #ffcf68;
+}
+
+@media (max-width: 1050px) {
+  .services,
+  .tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 24px 12px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 9px 11px;
+  }
+
+  .hero,
+  .services,
+  .tools {
+    grid-template-columns: 1fr;
+  }
+
+  .social-btn {
+    width: 100%;
+  }
+
+  .wrap {
+    padding: 16px 12px;
+  }
+
+  .panel {
+    min-height: 190px;
+  }
+
+  .btn,
+  .tool {
+    min-height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 
 <body>
-<header>
-  <div class="brand">THE <span>CYBER POINT</span> CAFE</div>
+
+<header id="home">
+  <h1 class="brand">THE <span>CYBER POINT</span> CAFE</h1>
+  <p class="tagline">
+    भूमि रिकॉर्ड एवं सरकारी ऑनलाइन सेवाओं का एक ही समाधान
+    <br>आपकी सुविधा, हमारा उद्देश्य
+  </p>
+  <div class="owner">👑 Shahzada Rock | 📞 8540854630</div>
 </header>
 
-<section class="hero">
-  <div class="heroText">
-    <small>आपकी अपनी ऑनलाइन सेवा केंद्र</small>
-    <h1>Shahzada Rock</h1>
-    <p>बिहार की भूमि रिकॉर्ड और सरकारी ऑनलाइन सेवाओं के लिए आपका भरोसेमंद सेवा केंद्र।</p>
-    <a class="phone" href="tel:8540854630">☎ 8540854630</a>
-  </div>
-  <img src="shahzada.jpg" alt="Shahzada Rock की फोटो">
-</section>
-
 <nav>
-  <a href="#">होम</a>
-  <a href="#services">सभी सेवाएँ</a>
-  <a href="#tools">PDF Tools</a>
-  <a href="#contact">संपर्क करें</a>
+  <a href="#home">⌂ होम</a>
+  <a href="#services">▤ सभी सेवाएँ</a>
+  <a href="#social">📱 Social Media</a>
+  <a href="#tools">🛠 PDF Tools</a>
+  <a href="#contact">☎ संपर्क</a>
 </nav>
 
-<div class="container">
-  <h2 class="heading" id="services">बिहार की ऑनलाइन सरकारी सेवाएँ</h2>
-  <p class="subheading">महत्वपूर्ण सेवाएँ एक ही जगह</p>
+<section class="socials" id="social">
+  <a class="social-btn instagram"
+     href="https://www.instagram.com/shahzada_rock?rpxt=MWhlYTI2bDdlNnFhOQ%3D%3D"
+     target="_blank" rel="noopener noreferrer">
+    📸 Instagram पर जुड़ें
+  </a>
+
+  <a class="social-btn youtube"
+     href="https://www.youtube.com/"
+     target="_blank" rel="noopener noreferrer">
+    ▶ YouTube खोलें
+  </a>
+</section>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="panel">
+      <div class="mapshape">🗺️</div>
+      <h2>बिहार भूमि सेवा</h2>
+      <p>राज्य की महत्वपूर्ण ऑनलाइन सेवाएँ अब एक ही जगह।</p>
+    </div>
+
+    <div class="panel">
+      <img class="profile-photo"
+           src="shahzada.jpg"
+           alt="Shahzada Rock की फोटो"
+           onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22%3E%3Crect width=%22160%22 height=%22160%22 fill=%22%231b2452%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%23ffd76a%22%3ESR%3C/text%3E%3Ctext x=%2250%25%22 y=%2275%25%22 font-size=%2211%22 text-anchor=%22middle%22 fill=%22white%22%3EADD PHOTO%3C/text%3E%3C/svg%3E'">
+
+      <h2>Shahzada Rock</h2>
+      <a class="phone" href="tel:8540854630">☎ 8540854630</a>
+      <p>आपकी सुविधा के लिए हमेशा तत्पर</p>
+    </div>
+
+    <div class="panel">
+      <div class="mapshape">🏠</div>
+      <h2>जमीन से संबंधित सेवाएँ</h2>
+      <p>जमीन के काम और ऑनलाइन आवेदन के लिए उपयोगी लिंक।</p>
+    </div>
+  </section>
+
+  <h2 class="section-title" id="services">🌐 सभी ऑनलाइन सेवाएँ</h2>
 
   <section class="services">
-    <a class="service" href="https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi"><span class="icon">📄</span>जमाबंदी</a>
-    <a class="service" href="https://www.bhulagan.bihar.gov.in/citizen/search.aspx"><span class="icon">₹</span>रसीद / लगान</a>
-    <a class="service" href="https://biharbhumi.bihar.gov.in/Biharbhumi/UserLogin"><span class="icon">📑</span>LPC APPLY</a>
-    <a class="service" href="https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw"><span class="icon">📚</span>पुराना खतियान</a>
-    <a class="service" href="https://land.bihar.gov.in/Ror2025/ViewRor.aspx?DistCode=22&SubDivCode=1&CircleCode=11"><span class="icon">📘</span>नया खतियान</a>
-    <a class="service" href="https://enibandhan.bihar.gov.in/homePage"><span class="icon">📝</span>E-Nibandhan</a>
-    <a class="service" href="https://serviceonline.bihar.gov.in/"><span class="icon">🏠</span>आवासीय प्रमाण पत्र</a>
-    <a class="service" href="https://serviceonline.bihar.gov.in/"><span class="icon">💰</span>आय प्रमाण पत्र</a>
-    <a class="service" href="https://serviceonline.bihar.gov.in/"><span class="icon">🪪</span>जाति प्रमाण पत्र</a>
-    <a class="service" href="https://emapi.bihar.gov.in/default.aspx?ReturnUrl=%2f"><span class="icon">📍</span>E-Mapi</a>
-    <a class="service" href="https://abha.abdm.gov.in/abha/v3/register/aadhaar"><span class="icon">📱</span>Aadhaar Mobile Check</a>
-    <a class="service" href="https://myaadhaarbeta.uidai.gov.in/genericDownloadAadhaar/en"><span class="icon">⬇️</span>Aadhaar Download</a>
-    <a class="service" href="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransViewJamabandi.aspx"><span class="icon">📖</span>22 भाषाओं में जमाबंदी</a>
-    <a class="service" href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/userDashboard.aspx"><span class="icon">✏️</span>Parimarjan Plus</a>
-    <a class="service" href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/trackapplication.aspx"><span class="icon">🔎</span>Parimarjan Track</a>
-    <a class="service" href="https://web.whatsapp.com/"><span class="icon">💬</span>WhatsApp Web</a>
+
+    <a class="btn" href="https://emutation.bihar.gov.in/biharBhumireport/ViewJamabandi" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📄</span><span class="txt">जमाबंदी</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://www.bhulagan.bihar.gov.in/citizen/search.aspx" target="_blank" rel="noopener noreferrer">
+      <span class="ico">₹</span><span class="txt">रसीद / लगान</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://biharbhumi.bihar.gov.in/Biharbhumi/UserLogin" target="_blank" rel="noopener noreferrer">
+      <span class="ico">▣</span><span class="txt">LPC Apply</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://bhuabhilekh.bihar.gov.in/login?ref=aW5kZXgucGhw" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📚</span><span class="txt">पुराना खतियान</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://land.bihar.gov.in/Ror2025/ViewRor.aspx?DistCode=22&SubDivCode=1&CircleCode=11" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📘</span><span class="txt">नया खतियान</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://enibandhan.bihar.gov.in/homePage" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📝</span><span class="txt">E-Nibandhan Entry</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://serviceonline.bihar.gov.in/" target="_blank" rel="noopener noreferrer">
+      <span class="ico">🏠</span><span class="txt">आवासीय प्रमाण पत्र</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://serviceonline.bihar.gov.in/" target="_blank" rel="noopener noreferrer">
+      <span class="ico">₹</span><span class="txt">आय प्रमाण पत्र</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://serviceonline.bihar.gov.in/" target="_blank" rel="noopener noreferrer">
+      <span class="ico">🪪</span><span class="txt">जाति प्रमाण पत्र</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://emapi.bihar.gov.in/default.aspx?ReturnUrl=%2f" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📍</span><span class="txt">E-Mapi</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://abha.abdm.gov.in/abha/v3/register/aadhaar" target="_blank" rel="noopener noreferrer">
+      <span class="ico">🪪</span><span class="txt">ABHA Registration</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://myaadhaarbeta.uidai.gov.in/genericDownloadAadhaar/en" target="_blank" rel="noopener noreferrer">
+      <span class="ico">⬇</span><span class="txt">Aadhaar Download</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+      <span class="ico">◉</span><span class="txt">WhatsApp Web</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://emutation.bihar.gov.in/LRCRoRGistDemo/TransViewJamabandi.aspx" target="_blank" rel="noopener noreferrer">
+      <span class="ico">📖</span><span class="txt">जमाबंदी — 22 भाषाओं में</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/userDashboard.aspx" target="_blank" rel="noopener noreferrer">
+      <span class="ico">✎</span><span class="txt">Parimarjan Plus</span><span class="go">›</span>
+    </a>
+
+    <a class="btn" href="https://parimarjanplus.bihar.gov.in/ParimarjanNew/trackapplication.aspx" target="_blank" rel="noopener noreferrer">
+      <span class="ico">⌁</span><span class="txt">Parimarjan Application Track</span><span class="go">›</span>
+    </a>
+
   </section>
 
-  <h2 class="heading" id="tools">PDF एवं IMAGE TOOLS</h2>
-  <p class="subheading">फाइल से जुड़े उपयोगी ऑनलाइन टूल</p>
+  <h2 class="section-title" id="tools">🛠 PDF एवं IMAGE TOOLS</h2>
 
   <section class="tools">
-    <a class="tool" href="https://www.ilovepdf.com/jpg_to_pdf">JPG to PDF</a>
-    <a class="tool" href="https://www.ilovepdf.com/compress_pdf">Compress PDF</a>
-    <a class="tool" href="https://imageresizer.com/image-compressor">Compress Image</a>
-    <a class="tool" href="https://www.ilovepdf.com/">I LOVE PDF</a>
+    <a class="tool" href="https://www.ilovepdf.com/jpg_to_pdf" target="_blank" rel="noopener noreferrer">🖼️ JPG to PDF</a>
+    <a class="tool" href="https://www.ilovepdf.com/compress_pdf" target="_blank" rel="noopener noreferrer">📄 Compress PDF</a>
+    <a class="tool" href="https://imageresizer.com/image-compressor" target="_blank" rel="noopener noreferrer">📷 Compress Image</a>
+    <a class="tool" href="https://www.ilovepdf.com/" target="_blank" rel="noopener noreferrer">🧰 I LOVE PDF</a>
   </section>
-</div>
+
+  <div class="note">
+    <strong>📌 जरूरी सूचना:</strong>
+    ये लिंक संबंधित सरकारी वेबसाइटों और ऑनलाइन टूल्स पर ले जाते हैं।
+    वेबसाइटों के नियम और उपलब्ध सेवाएँ बदल सकती हैं।
+    आवेदन करने से पहले वेबसाइट पर दी गई जानकारी ध्यान से पढ़ें।
+  </div>
+
+</main>
 
 <footer id="contact">
   <strong>THE CYBER POINT CAFE</strong><br>
-  Shahzada Rock | संपर्क: 8540854630<br>
-  सेवा ही हमारा उद्देश्य है
+  Shahzada Rock | 📞 <a href="tel:8540854630">8540854630</a><br>
+  सेवा ही हमारा उद्देश्य है ❤️<br>
+  <a href="https://www.instagram.com/shahzada_rock?rpxt=MWhlYTI2bDdlNnFhOQ%3D%3D" target="_blank" rel="noopener noreferrer">Instagram</a>
+  &nbsp; | &nbsp;
+  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
 </footer>
-
-<script>
-document.querySelectorAll('a[href]').forEach(function(link){
-  const url = link.getAttribute('href');
-
-  if(url && /^https?:\/\//i.test(url)){
-    link.setAttribute('target','_blank');
-    link.setAttribute('rel','noopener noreferrer');
-  }
-});
-</script>
 
 </body>
 </html>
