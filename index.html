@@ -17,7 +17,7 @@ header{background:linear-gradient(120deg,#062c52,#0879b9);color:white;padding:25
 .heroText{flex:1;min-width:250px}
 .heroText small{color:#0879b9;font-size:17px;font-weight:bold}
 .heroText h1{font-size:clamp(38px,6vw,68px);line-height:1.1;margin:12px 0;color:#063d70}
-.heroText p{font-size:18px;color:#53677b}
+.heroText p{font-size:18px;color:#53677b;line-height:1.7}
 .hero img{width:230px;height:230px;object-fit:cover;border-radius:20px;border:5px solid #e1effb;box-shadow:0 8px 25px #1234}
 .phone{display:inline-block;background:#0879b9;color:white;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:bold}
 nav{display:flex;flex-wrap:wrap;justify-content:center;background:#fff;border-bottom:1px solid #ddd}
@@ -32,7 +32,8 @@ nav a:hover{background:#e8f4ff}
 .icon{font-size:25px}
 .tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .tool{background:#e6f3ff;padding:20px 10px;border-radius:12px;text-align:center;color:#064574;text-decoration:none;font-weight:bold}
-footer{background:#062c52;color:white;text-align:center;padding:25px;margin-top:40px}
+.tool:hover{background:#cce8ff}
+footer{background:#062c52;color:white;text-align:center;padding:25px;margin-top:40px;line-height:1.8}
 @media(max-width:850px){.services,.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:500px){.services,.tools{grid-template-columns:1fr}.hero{margin:18px 12px}.hero img{width:190px;height:190px}.heading{font-size:25px}}
 </style>
@@ -43,7 +44,6 @@ footer{background:#062c52;color:white;text-align:center;padding:25px;margin-top:
   <div class="brand">THE <span>CYBER POINT</span> CAFE</div>
 </header>
 
-<main>
 <section class="hero">
   <div class="heroText">
     <small>आपकी अपनी ऑनलाइन सेवा केंद्र</small>
@@ -94,13 +94,24 @@ footer{background:#062c52;color:white;text-align:center;padding:25px;margin-top:
     <a class="tool" href="https://www.ilovepdf.com/">I LOVE PDF</a>
   </section>
 </div>
-</main>
 
 <footer id="contact">
   <strong>THE CYBER POINT CAFE</strong><br>
   Shahzada Rock | संपर्क: 8540854630<br>
   सेवा ही हमारा उद्देश्य है
 </footer>
+
+<script>
+document.querySelectorAll('a[href]').forEach(function(link){
+  const url = link.getAttribute('href');
+
+  if(url && /^https?:\/\//i.test(url)){
+    link.setAttribute('target','_blank');
+    link.setAttribute('rel','noopener noreferrer');
+  }
+});
+</script>
+
 </body>
 </html>
 ```
